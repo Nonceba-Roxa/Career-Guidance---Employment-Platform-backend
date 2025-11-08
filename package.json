@@ -1,28 +1,20 @@
 {
   "name": "career-guidance-backend",
   "version": "1.0.0",
-  "description": "Backend for Career Guidance Platform",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "seed": "node seed.js"
+    "dev": "vercel dev",
+    "start": "node index.js"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^6.0.0",
-    "body-parser": "1.20.2",
-    "compression": "^1.8.1",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.0.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-rate-limit": "^8.2.1",
-    "firebase-admin": "11.5.0",
-    "google-auth-library": "^8.0.0",
-    "helmet": "^8.1.0",
-    "mongoose": "^8.19.3",
-    "morgan": "^1.10.1"
-  },
-  "devDependencies": {
-    "nodemon": "2.0.22"
+    "helmet": "^7.0.0",
+    "compression": "^1.7.4",
+    "express-rate-limit": "^7.0.0",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1"
   }
 }
