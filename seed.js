@@ -50,12 +50,6 @@ async function createUserWithProfile({ email, password, role, ...rest }) {
   try {
     console.log("🚀 Seeding Admin Users Only...");
 
-    // Clean only users collection (keep other data if any)
-    console.log("🗑️ Clearing existing users...");
-    const usersSnap = await db.collection("users").get();
-    const batch = db.batch();
-    usersSnap.forEach(doc => batch.delete(doc.ref));
-    await batch.commit();
 
     // Create 3 admin users in Firebase Auth + Firestore
     const admin1Id = await createUserWithProfile({
@@ -79,11 +73,11 @@ async function createUserWithProfile({ email, password, role, ...rest }) {
       name: "System Admin 3"
     });
 
-    console.log("\n📋 Admin Users Created:");
+    console.log("\n Admin Users Created:");
     console.log("1. admin1@careerhub.com / Admin123!");
     console.log("2. admin2@careerhub.com / Admin123!");
     console.log("3. admin3@careerhub.com / Admin123!");
-    console.log("\n🔐 All admins use the same password: Admin123!");
+    console.log("\n All admins use the same password: Admin123!");
 
     console.log("✅ Admin seeding complete!");
     process.exit(0);
